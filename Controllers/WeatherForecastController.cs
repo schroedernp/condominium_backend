@@ -21,9 +21,9 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
-        var teste = new WeatherForecast();
+        var teste = new WeatherForecast(DateTime.Now);
 
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        return Enumerable.Range(1, 5).Select(index => new WeatherForecast(DateTime.Now)
         {
             Date = null,
             TemperatureC = Random.Shared.Next(-20, 55),
